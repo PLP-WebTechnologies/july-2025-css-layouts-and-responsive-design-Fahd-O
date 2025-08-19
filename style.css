@@ -1,0 +1,140 @@
+/* ===== Global Styles ===== */
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* ===== Grid Layout for Page Structure ===== */
+body
+{
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
+}
+
+.header
+{
+    grid-area: header;
+    background: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.nav
+{
+    grid-area: nav;
+    background: #333;
+}
+
+.nav ul
+{
+    display: flex;             /* Flexbox used here */
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+}
+
+.nav a
+{
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+}
+
+.nav a:hover
+{
+    background: #4CAF50;
+    border-radius: 4px;
+}
+
+.main
+{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.content
+{
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: .5rem;
+}
+
+.sidebar
+{
+    background: #e0e0e0;
+    padding: 20px;
+    border-radius: .5rem;
+}
+
+.footer
+{
+    grid-area: footer;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ===== Flexbox for Cards ===== */
+.cards
+{
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.card
+{
+    background: #ddd;
+    padding: 20px;
+    border-radius: .3rem;
+    flex: 1 1 150px; /* grow, shrink, min-width */
+    text-align: center;
+}
+
+
+
+/* ===== Responsive Design (Media Queries) ===== */
+
+/* Tablets */
+@media (max-width: 900px)
+{
+    .main
+    {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px)
+{
+    .main
+    {
+        grid-template-columns: 1fr;
+    }
+    .nav ul
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+}
